@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_dashboard" name="shell-type"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0037b0",
+            "primary-container": "#1d4ed8",
+            "surface": "#f8f9ff",
+            "surface-container-low": "#eff4ff",
+            "surface-container": "#e5eeff",
+            "surface-container-lowest": "#ffffff",
+            "on-surface": "#0b1c30",
+            "on-surface-variant": "#434655",
+            "outline-variant": "#c4c5d7",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+          },
+          fontFamily: {
+            "body": ["Plus Jakarta Sans", "sans-serif"],
+            "mono": ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-[#F8FAFC] font-body text-slate-800 min-h-screen antialiased">
+<!-- Left Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-full w-72 bg-white z-50 flex flex-col justify-between border-r border-slate-100">
+<div class="flex flex-col">
+<!-- Brand Header -->
+<div class="p-6 border-b border-slate-100">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-700">
+<span class="material-symbols-outlined text-2xl">layers</span>
+</div>
+<div class="flex flex-col">
+<span class="text-lg font-bold text-slate-900 tracking-tight leading-none">SmartQueue</span>
+<span class="text-xs text-slate-500 font-medium leading-none mt-1.5">Campus Service Intelligence</span>
+</div>
+</div>
+<div class="mt-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"></span>
+            Manage urgency, not just queue
+          </span>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-1.5 p-4">
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-all font-medium text-sm" href="/dashboard">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-slate-400">grid_view</span>
+<span>Dashboard</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-all font-medium text-sm" href="/live-queue">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-slate-400">format_list_bulleted</span>
+<span>Live Queue</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-blue-600 text-white font-mono text-xs font-semibold">24</span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-all font-medium text-sm" href="/add-request">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-slate-400">add_circle</span>
+<span>Add Request</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-all font-medium text-sm" href="/queue-history">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-slate-400">history</span>
+<span>Queue History</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-blue-50 text-blue-700 font-semibold text-sm border-l-4 border-blue-600 shadow-sm" href="/analytics">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-blue-700">monitoring</span>
+<span>Analytics</span>
+</div>
+</a>
+</nav>
+</div>
+<!-- User Profile & Settings Footer -->
+<div class="flex flex-col border-t border-slate-100 p-4">
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-all mb-2 font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">settings</span>
+<span>Settings</span>
+</a>
+<div class="flex items-center gap-3 p-2.5 bg-slate-50 rounded-xl border border-slate-100">
+<img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBHY5QzlAW5756xmr1FaZV9DrSN83GtFs6prjC4jndo0mTRB7EUqTDuCJlY5gZGgDtn90daZZxrsHPckVsBOhrCB9Y7ncK5rqzIsG-oH7ZwUnH79BFXhLVoMOUL5olUTsQX8TiFJK2Ut5Z4E81XDq9haUu5CwTHvGNt7M1dpydWNYJf2vczplUamE3r2Tppj_cNw4zfMREWks_kXYDPSt_-9qtmYxt2dlOGRUrDS351E3Prsfb4sHb"/>
+<div class="flex flex-col overflow-hidden">
+<span class="text-xs font-semibold text-slate-900 truncate">Dean Office Admin</span>
+<span class="text-[11px] text-slate-500 font-mono truncate">Desk A-02</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<div class="pl-72">
+<!-- Clean Minimal Header -->
+<header class="fixed top-0 left-72 right-0 h-16 bg-white/95 backdrop-blur-md border-b border-slate-100 z-40 px-8 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-medium">
+<span class="material-symbols-outlined text-[16px] text-blue-600">domain</span>
+          North Campus Hub · Counter 04
+        </span>
+</div>
+<div class="flex items-center gap-4">
+<span class="inline-flex items-center gap-2 text-xs font-medium text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          System Online
+        </span>
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-600 text-white font-semibold text-sm shadow-sm hover:bg-blue-700 transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>New Request</span>
+</button>
+</div>
+</header>
+<!-- Page Body -->
+<main class="w-full pt-20 px-8 pb-12 max-w-7xl mx-auto">
+<div class="flex flex-col gap-8">
+<!-- Header & Time Filter -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
+<div>
+<h1 class="text-2xl font-bold text-slate-900 tracking-tight">Queue Analytics</h1>
+<p class="text-sm text-slate-500 mt-1">Real-time campus service performance and operational urgency flow.</p>
+</div>
+<!-- Time Range Selector Pill -->
+<div class="inline-flex items-center bg-white p-1 rounded-xl border border-slate-200 shadow-sm self-start sm:self-auto">
+<button class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 text-white shadow-sm transition-all" id="btn-today" onclick="setRange('today')">
+              Today
+            </button>
+<button class="px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all" id="btn-7d" onclick="setRange('7d')">
+              Last 7 Days
+            </button>
+<button class="px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all" id="btn-semester" onclick="setRange('semester')">
+              Semester
+            </button>
+</div>
+</div>
+<!-- 4 Clean Primary Key Metric Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+<!-- Card 1: Total Requests -->
+<div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Total Requests</span>
+<div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">stacks</span>
+</div>
+</div>
+<div class="mt-4 flex items-baseline gap-2">
+<span class="text-3xl font-bold text-slate-900 tracking-tight" id="kpi-total">42</span>
+<span class="text-xs font-medium text-slate-500">tickets</span>
+</div>
+<p class="mt-2 text-xs text-slate-500 flex items-center gap-1">
+<span class="text-emerald-600 font-semibold inline-flex items-center">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>+18%
+              </span>
+<span>vs yesterday</span>
+</p>
+</div>
+<!-- Card 2: Average Wait -->
+<div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Average Wait</span>
+<div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">timer</span>
+</div>
+</div>
+<div class="mt-4 flex items-baseline gap-1.5">
+<span class="text-3xl font-bold text-slate-900 tracking-tight" id="kpi-wait">8</span>
+<span class="text-lg font-semibold text-slate-700">min</span>
+</div>
+<p class="mt-2 text-xs text-emerald-600 font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+              Within optimal range
+            </p>
+</div>
+<!-- Card 3: Queue Efficiency -->
+<div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Queue Efficiency</span>
+<div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+</div>
+<div class="mt-4 flex items-baseline gap-2">
+<span class="text-3xl font-bold text-slate-900 tracking-tight" id="kpi-eff">91%</span>
+<span class="text-xs font-semibold text-emerald-700">Optimal</span>
+</div>
+<p class="mt-2 text-xs text-slate-500">Exceeds standard 85% goal</p>
+</div>
+<!-- Card 4: Most Requested Service -->
+<div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Most Requested</span>
+<div class="w-8 h-8 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</div>
+</div>
+<div class="mt-4 flex items-baseline gap-2">
+<span class="text-2xl font-bold text-slate-900 tracking-tight">Certificates</span>
+</div>
+<p class="mt-2 text-xs text-slate-500 flex items-center gap-1">
+<span class="font-semibold text-slate-700">10 pending</span> · Transcripts &amp; stamps
+            </p>
+</div>
+</div>
+<!-- Main Content Grid: 8 Cols (Charts) + 4 Cols (Priority & Insights) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- Left Column (8 cols): Clean Horizontal Bar Charts & Hourly Activity -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Chart 1: Requests by Service (Clean Minimal Bars) -->
+<div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h2 class="text-base font-bold text-slate-900">Requests by Service</h2>
+<p class="text-xs text-slate-500 mt-0.5">Distribution and average service turnaround time</p>
+</div>
+<span class="text-xs font-semibold text-slate-600 bg-slate-50 px-2.5 py-1 rounded-lg border border-slate-100">
+                  4 Active Departments
+                </span>
+</div>
+<!-- Service Progress Rows -->
+<div class="space-y-5">
+<!-- Row 1: Scholarship -->
+<div>
+<div class="flex items-center justify-between text-xs mb-1.5 font-medium">
+<span class="text-slate-900 font-semibold">Scholarship &amp; Financial Aid</span>
+<div class="flex items-center gap-3">
+<span class="text-slate-500">Avg 11 min</span>
+<span class="font-mono font-semibold text-slate-900">14 (33%)</span>
+</div>
+</div>
+<div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-blue-600 rounded-full" style="width: 33.3%"></div>
+</div>
+</div>
+<!-- Row 2: Medical Center -->
+<div>
+<div class="flex items-center justify-between text-xs mb-1.5 font-medium">
+<span class="text-slate-900 font-semibold">Medical &amp; Health Center</span>
+<div class="flex items-center gap-3">
+<span class="text-slate-500">Avg 3.5 min</span>
+<span class="font-mono font-semibold text-slate-900">12 (28%)</span>
+</div>
+</div>
+<div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-blue-500 rounded-full" style="width: 28.5%"></div>
+</div>
+</div>
+<!-- Row 3: Certificate & Transcripts -->
+<div>
+<div class="flex items-center justify-between text-xs mb-1.5 font-medium">
+<span class="text-slate-900 font-semibold">Certificate &amp; Transcripts</span>
+<div class="flex items-center gap-3">
+<span class="text-slate-500">Avg 14 min</span>
+<span class="font-mono font-semibold text-slate-900">10 (24%)</span>
+</div>
+</div>
+<div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-sky-500 rounded-full" style="width: 23.8%"></div>
+</div>
+</div>
+<!-- Row 4: General Inquiries -->
+<div>
+<div class="flex items-center justify-between text-xs mb-1.5 font-medium">
+<span class="text-slate-900 font-semibold">General Campus Inquiries</span>
+<div class="flex items-center gap-3">
+<span class="text-slate-500">Avg 5 min</span>
+<span class="font-mono font-semibold text-slate-900">6 (15%)</span>
+</div>
+</div>
+<div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-slate-400 rounded-full" style="width: 14.4%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Chart 2: Daily Queue Activity (Hourly Volume) -->
+<div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h2 class="text-base font-bold text-slate-900">Daily Queue Activity</h2>
+<p class="text-xs text-slate-500 mt-0.5">Hourly arrival volume across counters</p>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold">
+<span class="w-2 h-2 rounded-full bg-blue-600"></span>
+                  Peak: 12:30 PM – 1:30 PM
+                </div>
+</div>
+<!-- Clean Bar Graph Layout -->
+<div class="pt-4">
+<div class="grid grid-cols-7 gap-4 sm:gap-6 items-end h-48 border-b border-slate-100 pb-2">
+<!-- 9 AM -->
+<div class="flex flex-col items-center h-full justify-end group">
+<span class="text-[11px] font-mono font-medium text-slate-400 mb-1.5 group-hover:text-slate-700">4</span>
+<div class="w-full max-w-[42px] bg-slate-100 group-hover:bg-blue-100 rounded-t-lg transition-colors" style="height: 28%;"></div>
+<span class="text-xs font-medium text-slate-500 mt-2">9 AM</span>
+</div>
+<!-- 10 AM -->
+<div class="flex flex-col items-center h-full justify-end group">
+<span class="text-[11px] font-mono font-medium text-slate-400 mb-1.5 group-hover:text-slate-700">7</span>
+<div class="w-full max-w-[42px] bg-slate-100 group-hover:bg-blue-100 rounded-t-lg transition-colors" style="height: 48%;"></div>
+<span class="text-xs font-medium text-slate-500 mt-2">10 AM</span>
+</div>
+<!-- 11 AM -->
+<div class="flex flex-col items-center h-full justify-end group">
+<span class="text-[11px] font-mono font-medium text-slate-400 mb-1.5 group-hover:text-slate-700">9</span>
+<div class="w-full max-w-[42px] bg-slate-100 group-hover:bg-blue-100 rounded-t-lg transition-colors" style="height: 62%;"></div>
+<span class="text-xs font-medium text-slate-500 mt-2">11 AM</span>
+</div>
+<!-- 12 PM (Peak Rush) -->
+<div class="flex flex-col items-center h-full justify-end">
+<span class="text-[11px] font-mono font-bold text-blue-600 mb-1.5">14</span>
+<div class="w-full max-w-[42px] bg-blue-600 rounded-t-lg shadow-sm" style="height: 95%;"></div>
+<span class="text-xs font-bold text-blue-700 mt-2">12 PM</span>
+</div>
+<!-- 1 PM -->
+<div class="flex flex-col items-center h-full justify-end group">
+<span class="text-[11px] font-mono font-medium text-slate-600 mb-1.5">12</span>
+<div class="w-full max-w-[42px] bg-blue-400 rounded-t-lg transition-colors" style="height: 82%;"></div>
+<span class="text-xs font-medium text-slate-500 mt-2">1 PM</span>
+</div>
+<!-- 2 PM -->
+<div class="flex flex-col items-center h-full justify-end group">
+<span class="text-[11px] font-mono font-medium text-slate-400 mb-1.5 group-hover:text-slate-700">6</span>
+<div class="w-full max-w-[42px] bg-slate-100 group-hover:bg-blue-100 rounded-t-lg transition-colors" style="height: 41%;"></div>
+<span class="text-xs font-medium text-slate-500 mt-2">2 PM</span>
+</div>
+<!-- 3 PM -->
+<div class="flex flex-col items-center h-full justify-end group">
+<span class="text-[11px] font-mono font-medium text-slate-400 mb-1.5 group-hover:text-slate-700">5</span>
+<div class="w-full max-w-[42px] bg-slate-100 group-hover:bg-blue-100 rounded-t-lg transition-colors" style="height: 34%;"></div>
+<span class="text-xs font-medium text-slate-500 mt-2">3 PM</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column (4 cols): Priority Breakdown & Key Insights -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Chart 3: Priority Breakdown (Minimal Clean Donut) -->
+<div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-base font-bold text-slate-900">Priority Breakdown</h2>
+<span class="text-xs font-medium text-slate-500">Urgency tiers</span>
+</div>
+<!-- Elegant Donut Visualization -->
+<div class="flex flex-col items-center justify-center my-4">
+<div class="relative w-40 h-40 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<!-- Background circle -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#f1f5f9" stroke-width="10"></circle>
+<!-- Normal Priority 50% (Green) -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#10b981" stroke-dasharray="119.38 238.76" stroke-dashoffset="0" stroke-width="10"></circle>
+<!-- Medium Priority 32% (Amber) -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#f59e0b" stroke-dasharray="76.4 238.76" stroke-dashoffset="-119.38" stroke-width="10"></circle>
+<!-- High Priority 18% (Red) -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#ef4444" stroke-dasharray="43 238.76" stroke-dashoffset="-195.78" stroke-width="10"></circle>
+</svg>
+<div class="absolute flex flex-col items-center justify-center">
+<span class="text-2xl font-bold text-slate-900 leading-tight">42</span>
+<span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Tickets</span>
+</div>
+</div>
+</div>
+<!-- Minimal Legend List -->
+<div class="space-y-2.5 mt-2">
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-50">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+<span class="text-xs font-semibold text-slate-800">High Priority</span>
+</div>
+<span class="text-xs font-mono font-medium text-slate-600">8 (18%)</span>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-50">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+<span class="text-xs font-semibold text-slate-800">Medium Priority</span>
+</div>
+<span class="text-xs font-mono font-medium text-slate-600">14 (32%)</span>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-50">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+<span class="text-xs font-semibold text-slate-800">Normal Priority</span>
+</div>
+<span class="text-xs font-mono font-medium text-slate-600">20 (50%)</span>
+</div>
+</div>
+</div>
+<!-- Key Campus Insights (Clean, High-Readability Card) -->
+<div class="bg-blue-600 text-white p-6 rounded-2xl shadow-sm">
+<div class="flex items-center gap-2 mb-5">
+<span class="material-symbols-outlined text-[20px] text-blue-200">lightbulb</span>
+<span class="text-xs font-bold uppercase tracking-wider text-blue-100">Key Campus Insights</span>
+</div>
+<div class="space-y-4">
+<!-- Insight 1: Peak Queue Time -->
+<div class="border-b border-blue-500/40 pb-3">
+<span class="text-[11px] font-medium text-blue-200 uppercase tracking-wider block">Peak Queue Time</span>
+<p class="text-base font-bold text-white mt-0.5">12:30 PM – 1:30 PM</p>
+<p class="text-xs text-blue-100 mt-1">Lunch rush aligns with semester scholarship cutoff deadlines.</p>
+</div>
+<!-- Insight 2: Most Requested Service -->
+<div class="border-b border-blue-500/40 pb-3">
+<span class="text-[11px] font-medium text-blue-200 uppercase tracking-wider block">Most Requested Service</span>
+<div class="flex items-center justify-between mt-0.5">
+<p class="text-base font-bold text-white">Certificates</p>
+<span class="text-xs font-mono bg-blue-700 px-2 py-0.5 rounded text-blue-100">10 pending</span>
+</div>
+<p class="text-xs text-blue-100 mt-1">High volume for Bonafide certificates and transcript clearances.</p>
+</div>
+<!-- Insight 3: High-Priority Response -->
+<div>
+<span class="text-[11px] font-medium text-blue-200 uppercase tracking-wider block">Avg High-Priority Response</span>
+<div class="flex items-center gap-2 mt-0.5">
+<p class="text-base font-bold text-white">3 min</p>
+<span class="text-[11px] font-semibold text-emerald-300 bg-emerald-500/20 px-2 py-0.5 rounded-full">Exceeding SLA</span>
+</div>
+<p class="text-xs text-blue-100 mt-1">Staff triage response is currently operating 40% ahead of baseline.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script>
+    function setRange(range) {
+      const btnToday = document.getElementById('btn-today');
+      const btn7d = document.getElementById('btn-7d');
+      const btnSemester = document.getElementById('btn-semester');
+      const kpiTotal = document.getElementById('kpi-total');
+      const kpiWait = document.getElementById('kpi-wait');
+      const kpiEff = document.getElementById('kpi-eff');
+
+      const activeClasses = ['bg-blue-600', 'text-white', 'shadow-sm'];
+      const inactiveClasses = ['text-slate-600'];
+
+      [btnToday, btn7d, btnSemester].forEach(b => {
+        b.classList.remove(...activeClasses);
+        b.classList.add(...inactiveClasses);
+      });
+
+      if (range === 'today') {
+        btnToday.classList.add(...activeClasses);
+        btnToday.classList.remove(...inactiveClasses);
+        kpiTotal.textContent = '42';
+        kpiWait.textContent = '8';
+        kpiEff.textContent = '91%';
+      } else if (range === '7d') {
+        btn7d.classList.add(...activeClasses);
+        btn7d.classList.remove(...inactiveClasses);
+        kpiTotal.textContent = '284';
+        kpiWait.textContent = '9';
+        kpiEff.textContent = '89%';
+      } else if (range === 'semester') {
+        btnSemester.classList.add(...activeClasses);
+        btnSemester.classList.remove(...inactiveClasses);
+        kpiTotal.textContent = '1,420';
+        kpiWait.textContent = '7.5';
+        kpiEff.textContent = '93%';
+      }
+    }
+  </script>
+</body></html>

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-container": "#1d4ed8", "on-tertiary": "#ffffff", "primary-fixed-dim": "#b7c4ff", "error-container": "#ffdad6", "on-error-container": "#93000a", "on-secondary": "#ffffff", "on-surface-variant": "#434655", "surface-container-lowest": "#ffffff", "surface": "#f8f9ff", "surface-container-low": "#eff4ff", "on-error": "#ffffff", "error": "#ba1a1a", "secondary-container": "#dae2fd", "on-primary": "#ffffff", "surface-bright": "#f8f9ff", "on-primary-fixed": "#001551", "on-primary-container": "#cad3ff", "on-background": "#0b1c30", "outline": "#747686", "background": "#f8f9ff", "on-primary-fixed-variant": "#0039b5", "surface-tint": "#2151da", "primary-fixed": "#dce1ff", "secondary-fixed": "#dae2fd", "tertiary-fixed-dim": "#b4c5ff", "on-tertiary-container": "#c9d4ff", "on-secondary-container": "#5c647a", "surface-dim": "#cbdbf5", "on-tertiary-fixed": "#00174b", "inverse-on-surface": "#eaf1ff", "surface-container-high": "#dce9ff", "secondary-fixed-dim": "#bec6e0", "on-secondary-fixed": "#131b2e", "on-surface": "#0b1c30", "inverse-surface": "#213145", "surface-container": "#e5eeff", "outline-variant": "#c4c5d7", "tertiary": "#003ca3", "tertiary-fixed": "#dbe1ff", "tertiary-container": "#0051d6", "on-secondary-fixed-variant": "#3f465c", "secondary": "#565e74", "on-tertiary-fixed-variant": "#003ea8", "primary": "#0037b0", "inverse-primary": "#b7c4ff", "surface-variant": "#d3e4fe", "surface-container-highest": "#d3e4fe" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter-desktop": "1.5rem", "space-md": "1rem", "margin": "1.5rem", "space-xl": "2rem", "margin-desktop": "2.5rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "gutter": "1.5rem" }, fontFamily: { "body-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "code-metric": ["JetBrains Mono"], "body-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "display-stat": ["Plus Jakarta Sans"], "code-metric-sm": ["JetBrains Mono"] }, fontSize: { "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "label-md": ["13px", { "lineHeight": "16px", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "code-metric": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "600" }], "display-stat": ["48px", { "lineHeight": "52px", "fontWeight": "700" }], "code-metric-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface min-h-screen"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col justify-between border-r border-outline-variant/30"><div class="flex flex-col"><div class="p-space-lg border-b border-outline-variant/20"><div class="flex items-center gap-space-sm"><img alt="SmartQueue Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Upjif3DmBNP6l3fhvqctXp9Il5Jto9gAV6thgLDyNra4Poeh9YKGuCi88M5VBdYP9kp9RwBQf5HOLo2A-LcSIRqd3C4GuGUeNQx2PSsCTGghZVr0f_dyRA3hNOtXcD8jERxQ_a5UnQl94me1Dhqxn5s36qJhLDnMWWI_HDeE3fH0wcirx1nYFmorZNgKXCOtLAi1pdN8zw7JoRRw6K_VL46-25KJAtXNj57YV2T8-5zuGoDAGXl3bBukc"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">SmartQueue</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none mt-1">Campus Service Intelligence</span></div></div><div class="mt-space-md"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low text-primary font-label-sm text-label-sm border border-outline-variant/30"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>Manage urgency, not just queue</span></div></div><nav class="flex flex-col gap-1 p-space-md" data-active-classes="bg-surface-container-low text-primary font-semibold border-l-4 border-primary shadow-sm"><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all group" data-path="dashboard" href="/dashboard"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-label-md text-label-md">Dashboard</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all group" data-path="live-queue" href="/live-queue"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">layers</span><span class="font-label-md text-label-md">Live Queue</span></div><span class="px-2 py-0.5 rounded-full bg-primary text-on-primary font-code-metric-sm text-code-metric-sm font-semibold tracking-wide shadow-sm">24</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all group" data-path="add-request" href="/add-request"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">add_circle</span><span class="font-label-md text-label-md">Add Request</span></div></a><a aria-current="page" class="flex items-center justify-between px-space-md py-space-sm rounded-lg transition-all group bg-surface-container-low text-primary font-semibold border-l-4 border-primary shadow-sm" data-path="queue-history" href="/queue-history"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">history</span><span class="font-label-md text-label-md">Queue History</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all group" data-path="analytics" href="/analytics"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">monitoring</span><span class="font-label-md text-label-md">Analytics</span></div></a></nav></div><div class="flex flex-col border-t border-outline-variant/20 p-space-md"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all mb-2" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-label-md text-label-md">Settings</span></a><div class="flex items-center gap-space-sm px-space-md py-space-sm bg-surface-container-low rounded-lg border border-outline-variant/30"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-surface-container-lowest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBHY5QzlAW5756xmr1FaZV9DrSN83GtFs6prjC4jndo0mTRB7EUqTDuCJlY5gZGgDtn90daZZxrsHPckVsBOhrCB9Y7ncK5rqzIsG-oH7ZwUnH79BFXhLVoMOUL5olUTsQX8TiFJK2Ut5Z4E81XDq9haUu5CwTHvGNt7M1dpydWNYJf2vczplUamE3r2Tppj_cNw4zfMREWks_kXYDPSt_-9qtmYxt2dlOGRUrDS351E3Prsfb4sHb"/><div class="flex flex-col overflow-hidden"><span class="font-label-md text-label-md text-on-surface truncate">Dean Office Admin</span><span class="font-code-metric-sm text-code-metric-sm text-on-surface-variant truncate">Admin Desk A-02</span></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-md border-b border-outline-variant/30 z-40 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><img alt="SmartQueue Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Upjif3DmBNP6l3fhvqctXp9Il5Jto9gAV6thgLDyNra4Poeh9YKGuCi88M5VBdYP9kp9RwBQf5HOLo2A-LcSIRqd3C4GuGUeNQx2PSsCTGghZVr0f_dyRA3hNOtXcD8jERxQ_a5UnQl94me1Dhqxn5s36qJhLDnMWWI_HDeE3fH0wcirx1nYFmorZNgKXCOtLAi1pdN8zw7JoRRw6K_VL46-25KJAtXNj57YV2T8-5zuGoDAGXl3bBukc"/><div class="hidden md:flex items-center gap-2 px-3 py-1 rounded-md bg-surface-container-low border border-outline-variant/30 text-on-surface-variant font-label-sm text-label-sm"><span class="material-symbols-outlined text-[16px] text-primary">dns</span><span>North Campus Hub · Counter 04</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-code-metric-sm text-code-metric-sm font-semibold"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>System Online</span><span class="hidden lg:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-low text-on-surface-variant border border-outline-variant/30 font-code-metric-sm text-code-metric-sm"><span class="material-symbols-outlined text-[14px] text-primary">sync</span>Live Sync Active</span></div><a class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md shadow-sm hover:bg-tertiary-container transition-all active:scale-[0.98]" data-path="add-request" href="/add-request"><span class="material-symbols-outlined text-[18px]">add</span><span>New Request</span></a><div class="flex items-center pl-2 border-l border-outline-variant/30"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBHY5QzlAW5756xmr1FaZV9DrSN83GtFs6prjC4jndo0mTRB7EUqTDuCJlY5gZGgDtn90daZZxrsHPckVsBOhrCB9Y7ncK5rqzIsG-oH7ZwUnH79BFXhLVoMOUL5olUTsQX8TiFJK2Ut5Z4E81XDq9haUu5CwTHvGNt7M1dpydWNYJf2vczplUamE3r2Tppj_cNw4zfMREWks_kXYDPSt_-9qtmYxt2dlOGRUrDS351E3Prsfb4sHb"/></div></div></header><main class="w-full pt-16 bg-surface px-space-lg py-space-lg min-h-screen"><div class="flex flex-col w-full">
+<div class="flex flex-col gap-space-lg w-full max-w-7xl mx-auto">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-col">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Queue History</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Review resolved campus service requests and resolution times.</p>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container-low transition-all active:scale-[0.98]" id="exportCsvBtn">
+<span class="material-symbols-outlined text-[18px] text-primary">download</span>
+<span>Export CSV</span>
+</button>
+</div>
+</div>
+<!-- Top KPI Metric Cards (4 Cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- KPI 1 -->
+<div class="flex flex-col p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Total Resolved Today</span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-display-stat text-display-stat text-on-surface leading-none tracking-tight">38</span>
+<span class="inline-flex items-center font-code-metric-sm text-code-metric-sm text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full">
+            +14%
+          </span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-2">vs yesterday (33 closed)</span>
+</div>
+<!-- KPI 2 -->
+<div class="flex flex-col p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Average Wait Time</span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-display-stat text-display-stat text-on-surface leading-none tracking-tight">8.2</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant font-medium">min</span>
+</div>
+<span class="font-body-sm text-body-sm text-emerald-700 font-medium mt-2 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Well within campus SLA (15 min)
+        </span>
+</div>
+<!-- KPI 3 -->
+<div class="flex flex-col p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Average Service Time</span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-display-stat text-display-stat text-on-surface leading-none tracking-tight">6.5</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant font-medium">min</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-2">Standard turnaround: 7.0 min</span>
+</div>
+<!-- KPI 4 -->
+<div class="flex flex-col p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Resolution Rate</span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-display-stat text-display-stat text-primary leading-none tracking-tight">98%</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-2">38 of 39 requests completed</span>
+</div>
+</div>
+<!-- Filter & Search Toolbar -->
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-sm p-2 rounded-2xl bg-surface-container-lowest shadow-sm">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[18px] text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-surface-container-low font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-all" id="queueSearchInput" placeholder="Search resolved requests by name, roll no, or service..." type="text"/>
+</div>
+<div class="flex items-center flex-wrap gap-space-xs">
+<!-- Date Selector -->
+<div class="relative">
+<select class="appearance-none pl-3.5 pr-8 py-2 rounded-xl bg-surface-container-low text-on-surface font-label-md text-label-md cursor-pointer hover:bg-surface-container-highest/60 focus:outline-none transition-colors" id="dateFilter">
+<option value="today">Today, Oct 24</option>
+<option value="yesterday">Yesterday, Oct 23</option>
+<option value="week">Past 7 Days</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-[16px] pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+<!-- Service Filter -->
+<div class="relative">
+<select class="appearance-none pl-3.5 pr-8 py-2 rounded-xl bg-surface-container-low text-on-surface font-label-md text-label-md cursor-pointer hover:bg-surface-container-highest/60 focus:outline-none transition-colors" id="serviceFilter">
+<option value="all">All Services</option>
+<option value="medical">Medical Services</option>
+<option value="scholarship">Scholarship &amp; Aid</option>
+<option value="records">Records &amp; Transcripts</option>
+<option value="accounts">Accounts &amp; Fees</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-[16px] pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+<!-- Priority Filter -->
+<div class="relative">
+<select class="appearance-none pl-3.5 pr-8 py-2 rounded-xl bg-surface-container-low text-on-surface font-label-md text-label-md cursor-pointer hover:bg-surface-container-highest/60 focus:outline-none transition-colors" id="priorityFilter">
+<option value="all">All Priorities</option>
+<option value="high">High Priority</option>
+<option value="medium">Medium Priority</option>
+<option value="normal">Normal Priority</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-[16px] pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Main History Table / Ledger -->
+<div class="w-full rounded-2xl bg-surface-container-lowest shadow-sm overflow-hidden flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/70">
+<th class="py-3.5 pl-6 pr-3 font-code-metric-sm text-code-metric-sm text-on-surface-variant uppercase tracking-wider font-semibold">Queue ID</th>
+<th class="py-3.5 px-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Student / Requester</th>
+<th class="py-3.5 px-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Service</th>
+<th class="py-3.5 px-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Priority</th>
+<th class="py-3.5 px-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Wait Time</th>
+<th class="py-3.5 px-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Service Time</th>
+<th class="py-3.5 px-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Completed At</th>
+<th class="py-3.5 pl-4 pr-6 text-right font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container" id="queueHistoryBody">
+<!-- Row 1: High Priority Medical -->
+<tr class="hover:bg-surface-container-low/40 transition-colors group">
+<td class="py-4 pl-6 pr-3 font-code-metric text-code-metric font-semibold text-primary">#01</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center font-label-md text-label-md font-semibold text-primary">
+                    RP
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Riya Patil</span>
+<span class="font-code-metric-sm text-code-metric-sm text-on-surface-variant">CS-2023-042</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 font-body-md text-body-md text-on-surface">Medical Emergency</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-50 text-rose-700 font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
+                  HIGH
+                </span>
+</td>
+<td class="py-4 px-4 font-code-metric text-code-metric text-on-surface">2 min</td>
+<td class="py-4 px-4 font-code-metric text-code-metric text-on-surface">8 min</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">10:44 AM</span>
+<span class="font-code-metric-sm text-code-metric-sm text-on-surface-variant">Counter 04</span>
+</div>
+</td>
+<td class="py-4 pl-4 pr-6 text-right">
+<button class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-semibold hover:text-tertiary transition-colors">
+<span>Details</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 2: Medium Priority Scholarship -->
+<tr class="hover:bg-surface-container-low/40 transition-colors group">
+<td class="py-4 pl-6 pr-3 font-code-metric text-code-metric font-semibold text-primary">#02</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center font-label-md text-label-md font-semibold text-on-secondary-container">
+                    IR
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Isha Rane</span>
+<span class="font-code-metric-sm text-code-metric-sm text-on-surface-variant">BT-2022-118</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 font-body-md text-body-md text-on-surface">Scholarship Form</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 text-amber-700 font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                  MEDIUM
+                </span>
+</td>
+<td class="py-4 px-4 font-code-metric text-code-metric text-on-surface">8 min</td>
+<td class="py-4 px-4 font-code-metric text-code-metric text-on-surface">6 min</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">11:15 AM</span>
+<span class="font-code-metric-sm text-code-metric-sm text-on-surface-variant">Counter 02</span>
+</div>
+</td>
+<td class="py-4 pl-4 pr-6 text-right">
+<button class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-semibold hover:text-tertiary transition-colors">
+<span>Details</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: Normal Priority Bonafide -->
+<tr class="hover:bg-surface-container-low/40 transition-colors group">
+<td class="py-4 pl-6 pr-3 font-code-metric text-code-metric font-semibold text-primary">#03</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-label-md text-label-md font-semibold text-on-surface">
+                    KS
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Komal Shah</span>
+<span class="font-code-metric-sm text-code-metric-sm text-on-surface-variant">EE-2024-005</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 font-body-md text-body-md text-on-surface">Bonafide Certificate</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  NORMAL
+                </span>
+</td>
+<td class="py-4 px-4 font-code-metric text-code-metric text-on-surface">12 min</td>
+<td class="py-4 px-4 font-code-metric text-code-metric text-on-surface">4 min</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">11:32 AM</span>
+<span class="font-code-metric-sm text-code-metric-sm text-on-surface-variant">Counter 04</span>
+</div>
+</td>
+<td class="py-4 pl-4 pr-6 text-right">
+<button class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-semibold hover:text-tertiary transition-colors">
+<span>Details</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 4: Normal Priority Transcript -->
+<tr class="hover:bg-surface-container-low/40 transition-colors group">
+<td class="py-4 pl-6 pr-3 font-code-metric text-code-metric font-semibold text-primary">#04</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center font-label-md text-label-md font-semibold text-primary">
+                    DK
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Devansh Kulkarni</span>
+<span class="font-code-metric-sm text-code-metric-sm text-on-surface-variant">ME-2021-019</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 font-body-md text-body-md text-on-surface">Transcript Attestation</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  NORMAL
+                </span>
+</td>
+<td class="py-4 px-4 font-code-metric text-code-metric text-on-surface">14 min</td>
+<td class="py-4 px-4 font-code-metric text-code-metric text-on-surface">5 min</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">12:05 PM</span>
+<span class="font-code-metric-sm text-code-metric-sm text-on-surface-variant">Counter 01</span>
+</div>
+</td>
+<td class="py-4 pl-4 pr-6 text-right">
+<button class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-semibold hover:text-tertiary transition-colors">
+<span>Details</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 5: High Priority Medical Note -->
+<tr class="hover:bg-surface-container-low/40 transition-colors group">
+<td class="py-4 pl-6 pr-3 font-code-metric text-code-metric font-semibold text-primary">#05</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-rose-100 flex items-center justify-center font-label-md text-label-md font-semibold text-rose-700">
+                    AS
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Ananya Sharma</span>
+<span class="font-code-metric-sm text-code-metric-sm text-on-surface-variant">EC-2023-094</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 font-body-md text-body-md text-on-surface">Medical Excuse Note</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-50 text-rose-700 font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span>
+                  HIGH
+                </span>
+</td>
+<td class="py-4 px-4 font-code-metric text-code-metric text-on-surface">3 min</td>
+<td class="py-4 px-4 font-code-metric text-code-metric text-on-surface">7 min</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">12:28 PM</span>
+<span class="font-code-metric-sm text-code-metric-sm text-on-surface-variant">Counter 04</span>
+</div>
+</td>
+<td class="py-4 pl-4 pr-6 text-right">
+<button class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-semibold hover:text-tertiary transition-colors">
+<span>Details</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 6: Medium Priority Fee Installment -->
+<tr class="hover:bg-surface-container-low/40 transition-colors group">
+<td class="py-4 pl-6 pr-3 font-code-metric text-code-metric font-semibold text-primary">#06</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-label-md text-label-md font-semibold text-on-surface">
+                    SR
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Siddharth Rao</span>
+<span class="font-code-metric-sm text-code-metric-sm text-on-surface-variant">IT-2022-045</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 font-body-md text-body-md text-on-surface">Fee Installment Form</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 text-amber-700 font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                  MEDIUM
+                </span>
+</td>
+<td class="py-4 px-4 font-code-metric text-code-metric text-on-surface">11 min</td>
+<td class="py-4 px-4 font-code-metric text-code-metric text-on-surface">9 min</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">01:10 PM</span>
+<span class="font-code-metric-sm text-code-metric-sm text-on-surface-variant">Counter 03</span>
+</div>
+</td>
+<td class="py-4 pl-4 pr-6 text-right">
+<button class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-semibold hover:text-tertiary transition-colors">
+<span>Details</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">chevron_right</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination / Summary Footer -->
+<div class="p-space-md bg-surface-container-low/40 flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+          Showing <span class="font-semibold text-on-surface">1 – 6</span> of <span class="font-semibold text-on-surface">38</span> completed requests today
+        </span>
+<div class="flex items-center gap-1">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container transition-colors disabled:opacity-50" disabled="">
+            Previous
+          </button>
+<button class="w-8 h-8 rounded-lg bg-primary text-on-primary font-code-metric-sm text-code-metric-sm font-semibold shadow-sm">
+            1
+          </button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface font-code-metric-sm text-code-metric-sm hover:bg-surface-container transition-colors">
+            2
+          </button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface font-code-metric-sm text-code-metric-sm hover:bg-surface-container transition-colors">
+            3
+          </button>
+<span class="px-1.5 text-outline">...</span>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface font-code-metric-sm text-code-metric-sm hover:bg-surface-container transition-colors">
+            7
+          </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm hover:bg-surface-container transition-colors">
+            Next
+          </button>
+</div>
+</div>
+</div>
+<!-- Bottom Summary Cards (2 Clean Cards) -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-md">
+<!-- Breakdown Card -->
+<div class="flex flex-col p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Service Resolution Breakdown</h2>
+<span class="font-code-metric-sm text-code-metric-sm text-on-surface-variant font-medium">38 Total</span>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Item 1 -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-on-surface font-medium flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-sm bg-primary"></span>
+                Health Center &amp; Emergency
+              </span>
+<span class="font-code-metric-sm text-code-metric-sm text-on-surface font-semibold">14 resolved</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-low overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 37%;"></div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-on-surface font-medium flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-sm bg-primary-container"></span>
+                Scholarship &amp; Financial Aid
+              </span>
+<span class="font-code-metric-sm text-code-metric-sm text-on-surface font-semibold">12 resolved</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-low overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 31%;"></div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-on-surface font-medium flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-sm bg-surface-tint"></span>
+                Records, Transcripts &amp; Bonafide
+              </span>
+<span class="font-code-metric-sm text-code-metric-sm text-on-surface font-semibold">12 resolved</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-low overflow-hidden">
+<div class="h-full bg-surface-tint rounded-full" style="width: 31%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Efficiency & Operational Highlight Card -->
+<div class="flex flex-col justify-between p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm">
+<div class="flex flex-col">
+<div class="flex items-center justify-between mb-3">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Peak Resolution Efficiency</h2>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Optimal Performance
+            </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            North Campus Counter 04 operated at <strong class="text-on-surface font-semibold">98% on-time resolution</strong> today with zero unresolved escalations. Average student turnaround remained under 7 minutes across all urgent submissions.
+          </p>
+</div>
+<div class="grid grid-cols-2 gap-space-sm pt-4 mt-4 bg-surface-container-low/50 rounded-xl p-3">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Fastest Turnaround</span>
+<span class="font-code-metric text-code-metric text-on-surface font-semibold mt-0.5">2 min · #01 Triage</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">SLA Compliance</span>
+<span class="font-code-metric text-code-metric text-emerald-700 font-semibold mt-0.5">100% within SLA</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple client-side search filtering interaction
+  const searchInput = document.getElementById('queueSearchInput');
+  const tableBody = document.getElementById('queueHistoryBody');
+
+  if (searchInput && tableBody) {
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      const rows = tableBody.querySelectorAll('tr');
+      
+      rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        if (text.includes(query)) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    });
+  }
+
+  // Export CSV mock trigger
+  const exportBtn = document.getElementById('exportCsvBtn');
+  if (exportBtn) {
+    exportBtn.addEventListener('click', () => {
+      const originalText = exportBtn.innerHTML;
+      exportBtn.innerHTML = `<span class="material-symbols-outlined text-[18px] animate-spin text-primary">sync</span><span>Preparing CSV...</span>`;
+      setTimeout(() => {
+        exportBtn.innerHTML = `<span class="material-symbols-outlined text-[18px] text-emerald-600">check</span><span>Downloaded</span>`;
+        setTimeout(() => {
+          exportBtn.innerHTML = originalText;
+        }, 2000);
+      }, 700);
+    });
+  }
+</script></main></div></body></html>
