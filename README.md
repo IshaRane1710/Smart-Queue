@@ -1,4 +1,4 @@
-# stitch_smart_e_system – SmartQueue Campus Intelligence System (Spring Boot)
+# SmartQueue Campus Intelligence System (Spring Boot)
 
 ## Run
 Requires JDK 17+ and Maven 3.9+.
